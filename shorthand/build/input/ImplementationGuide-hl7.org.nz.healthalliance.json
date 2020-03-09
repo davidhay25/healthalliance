@@ -1,0 +1,72 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.org.nz.healthalliance",
+  "url": "http://hl7.org.nz/healthalliance/ImplementationGuide/hl7.org.nz.healthalliance",
+  "version": "0.1.0",
+  "name": "healthAllianceIG",
+  "title": "healthAlliance IG",
+  "status": "active",
+  "publisher": "David Hay",
+  "contact": [
+    {
+      "name": "David Hay",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "david.hay25@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "The work being done for healthAlliance. Willlikely be renamed once the scope is more clear",
+  "packageId": "hl7.org.nz.healthalliance",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "uri": "http://hl7.org.nz/fhir/ImplementationGuide/hl7.org.nz.base",
+      "packageId": "hl7.org.nz.base",
+      "version": "dev"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/SummaryMedicationStatement"
+        },
+        "name": "summaryMedicationStatement",
+        "description": "summaryMedicationStatement",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      }
+    ]
+  }
+}

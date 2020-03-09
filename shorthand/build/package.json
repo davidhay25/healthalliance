@@ -1,0 +1,21 @@
+{
+  "name": "hl7.org.nz.healthalliance",
+  "version": "0.1.0",
+  "canonical": "http://hl7.org.nz/healthalliance",
+  "url": "http://hl7.org.nz/ImplementationGuide/healthalliance",
+  "title": "healthAlliance IG",
+  "description": "The work being done for healthAlliance. Willlikely be renamed once the scope is more clear",
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "hl7.org.nz.base": "dev"
+  },
+  "language": "en",
+  "author": "David Hay",
+  "maintainers": [
+    {
+      "name": "David Hay",
+      "email": "david.hay25@gmail.com"
+    }
+  ],
+  "license": "CC0-1.0"
+}
