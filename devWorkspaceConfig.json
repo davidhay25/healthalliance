@@ -1,0 +1,17 @@
+{
+    "name":"healthalliance",
+    "confServer":"http://home.clinfhir.com:8054/baseR4/",
+    "models" : [
+        {"id":"HaPatient","title":"Patient resource",
+            "interactions":[
+                {"code":"read"},
+                {"code":"search-type","documentation":"When searching, both name and DOB are required"}
+            ],
+            "params" :[
+                {"name":"name","type":"string"},
+                {"name":"birthDate","type":"date"}
+            ]
+        },
+        {"id":"HaMedicationDispense","title":"MedicationDispense resource"}
+    ]
+}
