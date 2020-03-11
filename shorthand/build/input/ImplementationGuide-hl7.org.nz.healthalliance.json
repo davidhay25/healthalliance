@@ -51,6 +51,11 @@
           "nameUrl": "index.html",
           "title": "Home",
           "generation": "markdown"
+        },
+        {
+          "nameUrl": "usecases.html",
+          "title": "Use Cases",
+          "generation": "markdown"
         }
       ]
     },
