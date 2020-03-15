@@ -1,6 +1,10 @@
 {
     "name":"healthalliance",
     "confServer":"http://home.clinfhir.com:8054/baseR4/",
+    "termServer":"https://r4.ontoserver.csiro.au/fhir/",
+    "editors": [
+        {"email":"david.hay25@gmail.com"}
+    ],
     "models" : [
         {"id":"HaPatient","title":"Patient resource",
             "interactions":[
