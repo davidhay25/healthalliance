@@ -13,7 +13,7 @@
       "telecom": [
         {
           "system": "email",
-          "value": "david.hay25@gmail.com"
+          "value": "mailto:david.hay25@gmail.com"
         }
       ]
     }
@@ -26,8 +26,8 @@
   ],
   "dependsOn": [
     {
-      "uri": "http://hl7.org.nz/fhir/ImplementationGuide/hl7.org.nz.base",
-      "packageId": "hl7.org.nz.base",
+      "uri": "http://hl7.org.nz/fhir/ImplementationGuide/hl7.org.nz.nhi",
+      "packageId": "hl7.org.nz.nhi",
       "version": "dev"
     }
   ],
@@ -35,11 +35,147 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/SummaryMedicationStatement"
+          "reference": "StructureDefinition/HaDhb"
         },
-        "name": "summaryMedicationStatement",
-        "description": "summaryMedicationStatement",
+        "name": "hA DHB details",
+        "description": "Represents DHB details exposed by healthAlliance systems",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaDiagnosticReport"
+        },
+        "name": "Common DiagnosticReport profile",
+        "description": "Represents lab data exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaEncounter"
+        },
+        "name": "Common Encounter profile",
+        "description": "Represents Encounter data exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaLabObservation"
+        },
+        "name": "Observation profile for lab results",
+        "description": "Observation profile for lab results.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaLocation"
+        },
+        "name": "Common Location profile",
+        "description": "Represents Location data exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaOrganization"
+        },
+        "name": "Common Organization profile",
+        "description": "Represents Organization data exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPatient"
+        },
+        "name": "Common Patient profile",
+        "description": "Represents patient demographics exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPractitioner"
+        },
+        "name": "Common Practitioner profile",
+        "description": "Represents Practitioner data exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPractitionerRole"
+        },
+        "name": "Common PractitionerRole profile",
+        "description": "Represents PractitionerRole data exposed by healthAlliance systems. Used to reference the usual GP.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/bundleLab"
+        },
+        "name": "bundleLab",
+        "description": "A bundle with all the FBC resources. Represented as a batch",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/drwelby"
+        },
+        "name": "drwelby",
+        "description": "An example of practitioner. Used as a target by some of the other examples",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ery"
+        },
+        "name": "ery",
+        "description": "An erythrrocyte observation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/fbc-contained"
+        },
+        "name": "fbc-contained",
+        "description": "Full Blood Count example. Uses contained observations",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/fbc-externalobs"
+        },
+        "name": "fbc-externalobs",
+        "description": "Full Blood Count example. Uses external observations",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
+      },
+      {
+        "reference": {
+          "reference": "Observation/hb"
+        },
+        "name": "hb",
+        "description": "A haemoglobin Observation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/mmh"
+        },
+        "name": "mmh",
+        "description": "Middlemore hospital - an example of a Location",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaLocation"
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient1"
+        },
+        "name": "patient1",
+        "description": "An example patient with all data items populated. Has a contained Practitioner as the GP.",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPatient"
+      },
+      {
+        "reference": {
+          "reference": "Organization/sysmex"
+        },
+        "name": "sysmex",
+        "description": "Sysmex Laboratories",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
       }
     ],
     "page": {
@@ -53,8 +189,28 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "api.html",
+          "title": "Api",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "design.html",
+          "title": "Design",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "development.html",
+          "title": "Development",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "usecases.html",
-          "title": "Use Cases",
+          "title": "Usecases",
           "generation": "markdown"
         }
       ]

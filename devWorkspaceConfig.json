@@ -16,6 +16,10 @@
                 {"name":"birthDate","type":"date"}
             ]
         },
-        {"id":"HaMedicationDispense","title":"MedicationDispense resource"}
+        {
+            "id":"HaMedicationStatement",
+            "title":"MedicationStatement resource",
+            "fshFilename":"profile-HaMedicationStatement.fsh"
+        }
     ]
 }

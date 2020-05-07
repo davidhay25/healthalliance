@@ -1,0 +1,16 @@
+{
+  "resourceType": "Organization",
+  "id": "sysmex",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+    ]
+  },
+  "name": "Sysmex laboratories",
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/id/hpi-organisation",
+      "value": "sysmex-1"
+    }
+  ]
+}

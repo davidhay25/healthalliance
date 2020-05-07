@@ -1,0 +1,283 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac1-ext",
+        "name": [
+          {
+            "text": "Dr Welby"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/hpi-person",
+            "value": "hpi-001"
+          }
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Dr Welby</div>"
+        }
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Practitioner/prac1-ext",
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac1-ext"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org1-ext",
+        "name": "Waipu Cove MC",
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/hpi-organisation",
+            "value": "Waipu Cove MC"
+          }
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Waipu Cove MC</div>"
+        }
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Organization/org1-ext",
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org1-ext"
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Patient/ha-patientSample-2"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ha-patientSample-2",
+        "contained": [
+          {
+            "resourceType": "Practitioner",
+            "id": "prac1",
+            "name": [
+              {
+                "text": "Dr Welby"
+              }
+            ],
+            "identifier": [
+              {
+                "system": "https://standards.digital.health.nz/id/hpi-person",
+                "value": "hpi-001"
+              }
+            ],
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Dr Welby</div>"
+            }
+          },
+          {
+            "resourceType": "Organization",
+            "id": "org1",
+            "name": "Waipu Cove MC",
+            "identifier": [
+              {
+                "system": "https://standards.digital.health.nz/id/hpi-organisation",
+                "value": "Waipu Cove MC"
+              }
+            ],
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Waipu Cove MC</div>"
+            }
+          }
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>John Albertus Doe with GP and Practice as contained resources</div>"
+        },
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/nhi",
+            "value": "WER4568"
+          }
+        ],
+        "name": [
+          {
+            "family": "Doe",
+            "given": [
+              "John",
+              "Albertus"
+            ],
+            "text": "John Albertus Doe"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1982-01-01",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+64 123 4567"
+          },
+          {
+            "system": "email",
+            "value": "john.doe@myserver.com"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "23 Thule St"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org.nz/fhir/StructureDefinition/suburb",
+                "valueString": "the Cove"
+              }
+            ],
+            "city": "Waipu"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "#prac1"
+          },
+          {
+            "reference": "#org1"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/ha-cmdhb",
+          "display": "Counties-Manakau DHB"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ha-patientSample-2-extRef",
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>John Albertus Doe with GP and Practice as referenced resources</div>"
+        },
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/nhi",
+            "value": "WER4568"
+          }
+        ],
+        "name": [
+          {
+            "family": "Doe",
+            "given": [
+              "John",
+              "Albertus"
+            ],
+            "text": "John Albertus Doe"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1982-01-01",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+64 123 4567"
+          },
+          {
+            "system": "email",
+            "value": "john.doe@myserver.com"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "23 Thule St"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org.nz/fhir/StructureDefinition/suburb",
+                "valueString": "the Cove"
+              }
+            ],
+            "city": "Waipu"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "Practitioner/prac1-ext",
+            "display": "Dr Welby"
+          },
+          {
+            "reference": "Organization/org1-ext",
+            "display": "Waipu Cove MC"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/ha-cmdhb",
+          "display": "Counties-Manakau DHB"
+        }
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Patient/ha-patientSample-2-extRef",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/ha-patientSample-2-extRef"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ha-cmdhb",
+        "name": "Counties-Manakau DHB",
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/hpi-organisation",
+            "value": "cmdhb"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/ha-cmdhb"
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Organization/ha-cmdhb"
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ha-adhb",
+        "name": "Auckland DHB",
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/hpi-organisation",
+            "value": "adhb"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/ha-adhb"
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Organization/ha-adhb"
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ha-wdhb",
+        "name": "Waitemata DHB",
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/id/hpi-organisation",
+            "value": "wdhb"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/ha-wdhb"
+      },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Organization/ha-wdhb"
+    }
+  ]
+}

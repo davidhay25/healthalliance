@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "HaLocation",
+  "url": "http://hl7.org.nz/healthalliance/StructureDefinition/HaLocation",
+  "version": "0.1.0",
+  "name": "HaLocation",
+  "title": "Common Location profile",
+  "status": "active",
+  "description": "Represents Location data exposed by healthAlliance systems",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Location",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Location",
+        "path": "Location"
+      }
+    ]
+  }
+}

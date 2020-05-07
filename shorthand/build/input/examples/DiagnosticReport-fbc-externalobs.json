@@ -1,0 +1,41 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "fbc-externalobs",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
+    ]
+  },
+  "status": "final",
+  "identifier": [
+    {
+      "system": "http://sysmex.org",
+      "value": "100"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "58410-2",
+        "system": "http://loinc.org"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Organization/sysmex"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "effectiveDateTime": "2020-04-10T12:00:00Z",
+  "result": [
+    {
+      "reference": "Observation/hb"
+    },
+    {
+      "reference": "Observation/ery"
+    }
+  ]
+}

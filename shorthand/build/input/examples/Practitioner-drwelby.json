@@ -1,0 +1,20 @@
+{
+  "resourceType": "Practitioner",
+  "id": "drwelby",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner"
+    ]
+  },
+  "name": [
+    {
+      "text": "Dr Marcus Welby"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/id/hpi-person",
+      "value": "cpn-1"
+    }
+  ]
+}

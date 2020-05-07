@@ -1,0 +1,3 @@
+Description,NHI,family name,given names,gender,birthDate,phone,email,address line 1,address line 2,suburb,city,GP name,GP HPI,Practice name,Practice facility id
+,,,,,,,,,,,,,,,
+John Doe,WER4568,Doe,John Albertus,male,1982-01-01,+64 123 4567,john.doe@myserver.com,23 Thule St,,the Cove,Waipu,Dr Welby,hpi-001,Waipu Cove MC,pracid-001

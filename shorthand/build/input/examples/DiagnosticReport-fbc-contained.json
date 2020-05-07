@@ -1,0 +1,149 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "fbc-contained",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Observation",
+      "id": "hb",
+      "status": "final",
+      "subject": {
+        "reference": "Patient/patient1"
+      },
+      "performer": [
+        {
+          "reference": "Organization/sysmex"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "718-7",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 176,
+        "unit": "g/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "g/L"
+      },
+      "referenceRange": [
+        {
+          "low": {
+            "value": 135,
+            "unit": "g/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "g/L"
+          },
+          "high": {
+            "value": 180,
+            "unit": "g/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "g/L"
+          }
+        }
+      ],
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "ery",
+      "status": "final",
+      "subject": {
+        "reference": "Patient/patient1"
+      },
+      "performer": [
+        {
+          "reference": "Organization/sysmex"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "789-8",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 5.9,
+        "unit": "x10*12/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "10*12/L"
+      },
+      "referenceRange": [
+        {
+          "low": {
+            "value": 4.2,
+            "unit": "x10*12/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "10*12/L"
+          },
+          "high": {
+            "value": 6,
+            "unit": "x10*12/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "10*12/L"
+          }
+        }
+      ],
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "identifier": [
+    {
+      "system": "http://sysmex.org",
+      "value": "100"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "58410-2",
+        "system": "http://loinc.org"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Organization/sysmex"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "effectiveDateTime": "2020-04-10T12:00:00Z",
+  "result": [
+    {
+      "reference": "Observation/hb"
+    },
+    {
+      "reference": "Observation/ery"
+    }
+  ]
+}
