@@ -1,0 +1,15 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "HaCapabilityStatement",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Demographics related resources</div>"
+  },
+  "date": "2020-04-01",
+  "status": "draft",
+  "kind": "instance",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ]
+}

@@ -107,11 +107,27 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/HaCapabilityStatement"
+        },
+        "name": "CapabilityStatement",
+        "description": "Represents API exposed by healthAlliance systems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Bundle/bundleLab"
         },
         "name": "bundleLab",
         "description": "A bundle with all the FBC resources. Represented as a batch",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/cmdhb"
+        },
+        "name": "cmdhb",
+        "description": "Counties Manakau DHB",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
       },
       {
         "reference": {
@@ -147,6 +163,14 @@
       },
       {
         "reference": {
+          "reference": "Organization/ghmc"
+        },
+        "name": "ghmc",
+        "description": "Good Health Medcial Centre",
+        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+      },
+      {
+        "reference": {
           "reference": "Observation/hb"
         },
         "name": "hb",
@@ -163,10 +187,18 @@
       },
       {
         "reference": {
+          "reference": "Bundle/patient-external"
+        },
+        "name": "patient-external",
+        "description": "An example patient with all external rerferences to GP and GP Practice",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Patient/patient1"
         },
         "name": "patient1",
-        "description": "An example patient with all data items populated. Has a contained Practitioner as the GP.",
+        "description": "An example patient with all data items populated. Has a contained Practitioner as the GP and GP Practice.",
         "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPatient"
       },
       {

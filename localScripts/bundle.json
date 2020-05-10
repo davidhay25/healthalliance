@@ -55,6 +55,7 @@
         "method": "PUT",
         "url": "Patient/ha-patientSample-2"
       },
+      "fullUrl": "http://hapi.fhir.org/baseR4/Patient/ha-patientSample-2",
       "resource": {
         "resourceType": "Patient",
         "id": "ha-patientSample-2",
@@ -235,7 +236,11 @@
             "system": "https://standards.digital.health.nz/id/hpi-organisation",
             "value": "cmdhb"
           }
-        ]
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>CMDHB</div>"
+        }
       },
       "request": {
         "method": "PUT",
@@ -253,7 +258,11 @@
             "system": "https://standards.digital.health.nz/id/hpi-organisation",
             "value": "adhb"
           }
-        ]
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>ADHB</div>"
+        }
       },
       "request": {
         "method": "PUT",
@@ -271,7 +280,11 @@
             "system": "https://standards.digital.health.nz/id/hpi-organisation",
             "value": "wdhb"
           }
-        ]
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns='http://www.w3.org/1999/xhtml'>WHB</div>"
+        }
       },
       "request": {
         "method": "PUT",

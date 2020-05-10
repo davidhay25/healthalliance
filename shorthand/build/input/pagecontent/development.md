@@ -11,11 +11,11 @@
 This page has links to external sites used during development and are present to assist the temam members and reviewers. The page will be removed once the IG has been completed.
 
 
-### links to working docs
+### Links to working docs
 
-(Resource and API considerations)[https://docs.google.com/document/d/1LTygQUy3LwJb8QFeODPnMBQVJkjqsypefQpgms7wHxI/edit#]
+[Resource and API considerations](https://docs.google.com/document/d/1LTygQUy3LwJb8QFeODPnMBQVJkjqsypefQpgms7wHxI/edit#)
 
-(Patient samples)[https://docs.google.com/spreadsheets/d/1IetmbfEvxld8mI6wrE4Qndm6fLQvpQM8GusEkAfcm3Q/edit#gid=0]
+[Patient samples (raw data)](https://docs.google.com/spreadsheets/d/1IetmbfEvxld8mI6wrE4Qndm6fLQvpQM8GusEkAfcm3Q/edit#gid=0)
 
 
 ### Process
@@ -36,8 +36,6 @@ These are business focussed Use Cases that are being used to drive the API desig
 > Add links to the business use cases. Might want to keep these long term...
 
 <a href="https://teams.microsoft.com/l/file/D1F42DEC-13AF-4CEB-8BD2-8162E09EF8F4?tenantId=494a2d87-24b5-42d8-8a3d-77448be1d46f&fileType=docx&objectUrl=https%3A%2F%2Fnorthernregion.sharepoint.com%2Fsites%2FhA-RegionalVendorAggregation%2FShared%20Documents%2FCore%20Data%2FUse%20Cases%2FUC-Reviewing%20a%20lab%20test.docx&baseUrl=https%3A%2F%2Fnorthernregion.sharepoint.com%2Fsites%2FhA-RegionalVendorAggregation&serviceName=teams&threadId=19:de0544d25929446caae97c3872737c87@thread.skype&groupId=c10bd23b-63fa-464f-86d5-97a6567556ed">Lab use cases
-
-
 
 
 ### Comments

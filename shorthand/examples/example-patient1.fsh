@@ -1,6 +1,6 @@
 Instance:   patient1
 InstanceOf: HaPatient
-Description: "An example patient with all data items populated. Has a contained Practitioner as the GP."
+Description: "An example patient with all data items populated. Has a contained Practitioner as the GP and GP Practice."
 Usage: #example
 
 * contained = prac1
@@ -33,8 +33,10 @@ Usage: #example
 * address.city = "Waipu"
 * address.extension[suburb].valueString = "Waipu river"
 
+//The Managing organization describes the DHB that supplied this record. This will always be an external resource.
+* managingOrganization = Reference(cmdhb)   //DHB is Counties Manukau
 
-//The general practitioner is described by the practitionerrole1 resource (has references to Practitioner & Location)
+//The general practitioner is described by the contained practitioner resource)
 * generalPractitioner.reference = "#prac1"
 
 Instance:   prac1

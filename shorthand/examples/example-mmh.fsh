@@ -7,3 +7,4 @@ Usage: #example
 
 * identifier.system = "https://standards.digital.health.nz/id/hpi-facility"
 * identifier.value = "fac-1"
+

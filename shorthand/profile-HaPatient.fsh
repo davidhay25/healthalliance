@@ -16,7 +16,6 @@ Description:    "Represents patient demographics exposed by healthAlliance syste
 * photo 0..0
 * contact 0..0
 * communication 0..0
-* managingOrganization 0..0
 * link 0..0
 * maritalStatus 0..0
 * multipleBirth[x] 0..0
@@ -59,10 +58,10 @@ Description:    "Represents patient demographics exposed by healthAlliance syste
 //If the actual GPis known, then use Practitioner, if the practice then use Organization.
 //Note that this might still be a contained resource - that's still supported by this profile
 //It might also be possible to use PractitionerRole - but the value of that is unclear at this time.
-* generalPractitioner only Reference(Practitioner | Organization)
+* generalPractitioner only Reference(HaPractitioner | HaOrganization)
 
 //The managing organization is the DHB where the Patient resource came from
-* managingOrganization = Reference(HaDhb)
+* managingOrganization only Reference(HaDhb)
 
 
 

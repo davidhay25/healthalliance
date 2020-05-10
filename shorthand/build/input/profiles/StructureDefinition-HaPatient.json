@@ -172,8 +172,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner",
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner",
+              "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
             ]
           }
         ]
@@ -181,10 +181,14 @@
       {
         "id": "Patient.managingOrganization",
         "path": "Patient.managingOrganization",
-        "max": "0",
-        "patternReference": {
-          "reference": "HaDhb"
-        }
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org.nz/healthalliance/StructureDefinition/HaDhb"
+            ]
+          }
+        ]
       },
       {
         "id": "Patient.link",

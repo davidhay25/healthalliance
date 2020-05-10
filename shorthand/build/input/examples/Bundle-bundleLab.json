@@ -82,6 +82,9 @@
             "value": "+64 9 000 0000"
           }
         ],
+        "managingOrganization": {
+          "reference": "Organization/cmdhb"
+        },
         "generalPractitioner": [
           {
             "reference": "#prac1"
