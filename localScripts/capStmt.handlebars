@@ -1,0 +1,51 @@
+This page is derived from the information recorded in the [CapabilityStatement](CapabilityStatement-HaCapabilityStatement.html) resource.
+It describes the details of the RESTful interface through which clients can access the data exposed by
+healthAlliance on behalf of the DHBs it supports.
+
+{{title}}  
+Status: {{text.status}}
+
+{{{description}}}
+
+{{{purpose}}}
+
+{{#each rest}}
+{{#each resource}}
+
+### {{type}}
+
+{{{this.documentation}}}
+
+{{#if interaction}}
+#### Interactions
+
+| Code | Documentation |
+| --- | --- |
+{{#each interaction}}
+| {{code}} | {{documentation}} |
+{{/each}}
+{{/if}}
+
+
+{{#if searchParam}}
+#### Search Parameters
+
+| Name | Type | Documentation |
+| --- | --- | --- |
+{{#each searchParam}}
+| {{name}} | {{type}} | {{{documentation}}}
+{{/each}}
+{{/if}}
+
+{{#if searchInclude}}
+#### Search Includes
+{{#each searchInclude}}
+{{this}}
+{{/each}}
+
+{{/if}}
+
+
+{{/each}}
+
+{{/each}}

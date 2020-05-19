@@ -3,7 +3,7 @@
   "id": "ghmc",
   "meta": {
     "profile": [
-      "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+      "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
     ]
   },
   "name": "Good Health Medcial Centre",

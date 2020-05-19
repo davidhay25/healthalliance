@@ -5,7 +5,7 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">healthAlliance Patient profile</div>"
   },
-  "url": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPatient",
+  "url": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPatient",
   "version": "0.1.0",
   "name": "HaPatient",
   "title": "Common Patient profile",
@@ -46,6 +46,48 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Patient.extension",
+        "path": "Patient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.extension:ethnicity",
+        "path": "Patient.extension",
+        "sliceName": "ethnicity",
+        "max": "6",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/ethnicity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:countryOfBirth",
+        "path": "Patient.extension",
+        "sliceName": "countryOfBirth",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/patient-countryOfBirth"
+            ]
+          }
+        ]
+      },
       {
         "id": "Patient.identifier",
         "path": "Patient.identifier",
@@ -117,6 +159,34 @@
         ]
       },
       {
+        "id": "Patient.telecom.extension:authorizedByPatient",
+        "path": "Patient.telecom.extension",
+        "sliceName": "authorizedByPatient",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/authorizedByPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.telecom.extension:validatedByPatient",
+        "path": "Patient.telecom.extension",
+        "sliceName": "validatedByPatient",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/validatedByPatient"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Patient.address",
         "path": "Patient.address",
         "min": 1
@@ -136,9 +206,32 @@
         ]
       },
       {
-        "id": "Patient.address.line",
-        "path": "Patient.address.line",
-        "min": 1
+        "id": "Patient.address.extension:domicileCode",
+        "path": "Patient.address.extension",
+        "sliceName": "domicileCode",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/domicileCode"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.address.extension:validatedByPatient",
+        "path": "Patient.address.extension",
+        "sliceName": "validatedByPatient",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/validatedByPatient"
+            ]
+          }
+        ]
       },
       {
         "id": "Patient.maritalStatus",
@@ -172,8 +265,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner",
-              "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPractitioner",
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
             ]
           }
         ]
@@ -185,7 +278,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org.nz/healthalliance/StructureDefinition/HaDhb"
+              "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
             ]
           }
         ]

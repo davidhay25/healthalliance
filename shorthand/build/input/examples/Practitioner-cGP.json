@@ -1,0 +1,24 @@
+{
+  "resourceType": "Practitioner",
+  "id": "cGP",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPractitioner"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Dr Richard Kildaire</div>",
+    "status": "additional"
+  },
+  "name": [
+    {
+      "text": "Dr Richard Kildaire"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/id/hpi-person",
+      "value": "cpn-1"
+    }
+  ]
+}

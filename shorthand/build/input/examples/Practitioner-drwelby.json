@@ -3,7 +3,7 @@
   "id": "drwelby",
   "meta": {
     "profile": [
-      "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner"
+      "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPractitioner"
     ]
   },
   "name": [

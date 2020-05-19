@@ -14,6 +14,10 @@ IG.definition.page.page.push({nameUrl:"design.html",title:"Design notes",generat
 IG.definition.page.page.push({nameUrl:"api.html",title:"API",generation:"markdown"})
 IG.definition.page.page.push({nameUrl:"downloads.html",title:"Downloads",generation:"markdown"})
 IG.definition.page.page.push({nameUrl:"development.html",title:"Development",generation:"markdown"})
+IG.definition.page.page.push({nameUrl:"capStmt.html",title:"Capability Statement",generation:"markdown"})
+
+IG.definition.page.page.push({nameUrl:"companion.html",title:"companion",generation:"html"})
+
 
 //add references for LM's
 let arModels = ['HaPatient','HaPractitioner','HaPractitionerRole','HaLocation','HaOrganization','HaDiagnosticReport','HaLabObservation'];

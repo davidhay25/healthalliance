@@ -1,0 +1,79 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "HaCapabilityStatement",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Demographics related resources</div>"
+  },
+  "name": "hA_CapabilityStatement",
+  "description": "API's exposed by healthAlliance",
+  "date": "2020-04-01",
+  "status": "draft",
+  "kind": "instance",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ],
+  "implementation": {
+    "description": "The hA endpoint",
+    "url": "http://healthAlliance.co.nz/fhir"
+  },
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Patient",
+          "supportedProfile": [
+            "http://hl7.org.nz/healthalliance/HaPatient"
+          ],
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type",
+              "documentation": "Gender and birthDate are required in all searches"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "name",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-name",
+              "documentation": "#### Example\nThis is an example\n\n> [host]/Patient?name=smith\n\n"
+            },
+            {
+              "name": "identifier",
+              "type": "token",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-identifier"
+            },
+            {
+              "name": "organization",
+              "type": "reference",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-organization"
+            }
+          ]
+        },
+        {
+          "type": "Practitioner",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Allows a read of a Practitioner resource - eg references from Patient"
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Allows a read of an Organization resource - eg references from Patient"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,7 +35,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://hl7.org.nz/healthalliance/StructureDefinition/suburb"
+        "fixedUri": "http://hl7.org.nz/fhir/ha/StructureDefinition/suburb"
       },
       {
         "id": "Extension.value[x]",

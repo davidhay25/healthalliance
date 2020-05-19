@@ -1,7 +1,15 @@
 
 // Aliases
 Alias: $suburb = http://hl7.org.nz/fhir/StructureDefinition/suburb
+Alias: $countryOfBirth = http://hl7.org.nz/fhir/StructureDefinition/patient-countryOfBirth
+
 Alias: $preferred = http://hl7.org/fhir/StructureDefinition/iso21090-preferred
+Alias: $ethnicity = http://hl7.org.nz/fhir/StructureDefinition/ethnicity
+
+//note 'healthAlliance' in the name. This is under review...
+Alias: $authorizedByPatient = http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/authorizedByPatient
+Alias: $validatedByPatient =  http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/validatedByPatient
+Alias: $domicileCode = http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/domicileCode
 
 Profile:        HaPatient
 Parent:         Patient
@@ -19,6 +27,10 @@ Description:    "Represents patient demographics exposed by healthAlliance syste
 * link 0..0
 * maritalStatus 0..0
 * multipleBirth[x] 0..0
+
+* extension contains
+    $ethnicity named ethnicity 0..6 and
+    $countryOfBirth named countryOfBirth 0..1
 
 //todo - not sure why this was constrained out...
 //* deceased[x] only dateTime     //may need to support boolean
@@ -47,12 +59,20 @@ Description:    "Represents patient demographics exposed by healthAlliance syste
     $preferred named preferred 0..1
   
 
+* telecom.extension contains
+    $authorizedByPatient named authorizedByPatient 0..1 and
+    $validatedByPatient named validatedByPatient 0..1
+
 // address is required and has a suburb extension. 
 * address.extension contains
-    $suburb named suburb 0..1
+    $suburb named suburb 0..1 and
+    $domicileCode named domicileCode 0..1 and
+    $validatedByPatient named validatedByPatient 0..1
+
 
 * address 1..*
-* address.line 1..*     //there will always be at least 1 line
+
+// todo - is this correct? * address.line 1..*     //there will always be at least 1 line
 
 //Limit the possible resources for generalPractitioner to a practitioner or an organization.
 //If the actual GPis known, then use Practitioner, if the practice then use Organization.
@@ -61,7 +81,7 @@ Description:    "Represents patient demographics exposed by healthAlliance syste
 * generalPractitioner only Reference(HaPractitioner | HaOrganization)
 
 //The managing organization is the DHB where the Patient resource came from
-* managingOrganization only Reference(HaDhb)
+* managingOrganization only Reference(HaOrganization)
 
 
 

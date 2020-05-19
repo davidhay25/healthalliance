@@ -1,10 +1,10 @@
-Profile:        HaDhb
+Profile:        HaOrganization
 Parent:         Organization
 Title:          "hA DHB details"
 Description:    "Represents DHB details exposed by healthAlliance systems"
 
 * ^text.status = #additional
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>healthAlliance DHB profile</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>healthAlliance Organization profile</div>"
 
 //elements that have been removed
 * active 0..0
@@ -16,13 +16,13 @@ Description:    "Represents DHB details exposed by healthAlliance systems"
 * contact 0..0
 * endpoint 0..0
 
-//slice identifier for the NHI number. Other identifiers are allowed
+//slice identifier for the OrgId number. Other identifiers are allowed
 * identifier ^slicing.discriminator.type = #value
-// uses 'use' rather than system to allow multiple NHI's if needed
+// uses 'use' rather than system to allow multiple OrgId's if needed
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #openAtEnd  //allow other identifiers
 
-//just the current NHI is specified right now...
+//just the current Organization Id is specified right now...
 * identifier contains 
     orgId 0..1 MS 
 

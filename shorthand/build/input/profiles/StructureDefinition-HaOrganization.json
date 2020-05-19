@@ -1,12 +1,16 @@
 {
   "resourceType": "StructureDefinition",
   "id": "HaOrganization",
-  "url": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">healthAlliance Organization profile</div>"
+  },
+  "url": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization",
   "version": "0.1.0",
   "name": "HaOrganization",
-  "title": "Common Organization profile",
+  "title": "hA DHB details",
   "status": "active",
-  "description": "Represents Organization data exposed by healthAlliance systems",
+  "description": "Represents DHB details exposed by healthAlliance systems",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -38,8 +42,75 @@
   "differential": {
     "element": [
       {
-        "id": "Organization",
-        "path": "Organization"
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "use"
+            }
+          ],
+          "rules": "openAtEnd"
+        }
+      },
+      {
+        "id": "Organization.identifier:orgId",
+        "path": "Organization.identifier",
+        "sliceName": "orgId",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:orgId.use",
+        "path": "Organization.identifier.use",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Organization.identifier:orgId.system",
+        "path": "Organization.identifier.system",
+        "patternUri": "https://standards.digital.health.nz/id/hpi-organisation"
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "max": "0"
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "max": "0"
+      },
+      {
+        "id": "Organization.alias",
+        "path": "Organization.alias",
+        "max": "0"
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "max": "0"
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "max": "0"
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "max": "0"
+      },
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "max": "0"
+      },
+      {
+        "id": "Organization.endpoint",
+        "path": "Organization.endpoint",
+        "max": "0"
       }
     ]
   }

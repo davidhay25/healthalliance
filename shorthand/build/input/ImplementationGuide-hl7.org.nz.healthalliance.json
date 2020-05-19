@@ -1,10 +1,10 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "hl7.org.nz.healthalliance",
-  "url": "http://hl7.org.nz/healthalliance/ImplementationGuide/hl7.org.nz.healthalliance",
+  "url": "http://hl7.org.nz/fhir/healthAlliance/ImplementationGuide/hl7.org.nz.healthalliance",
   "version": "0.1.0",
   "name": "healthAllianceIG",
-  "title": "healthAlliance IG",
+  "title": "healthAlliance Implementation Guide",
   "status": "active",
   "publisher": "David Hay",
   "contact": [
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "The work being done for healthAlliance. Willlikely be renamed once the scope is more clear",
+  "description": "The work being done for healthAlliance. Will likely be renamed once the scope is more clear",
   "packageId": "hl7.org.nz.healthalliance",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -35,50 +35,10 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/HaDhb"
+          "reference": "StructureDefinition/HaOrganization"
         },
         "name": "hA DHB details",
         "description": "Represents DHB details exposed by healthAlliance systems",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/HaDiagnosticReport"
-        },
-        "name": "Common DiagnosticReport profile",
-        "description": "Represents lab data exposed by healthAlliance systems",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/HaEncounter"
-        },
-        "name": "Common Encounter profile",
-        "description": "Represents Encounter data exposed by healthAlliance systems",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/HaLabObservation"
-        },
-        "name": "Observation profile for lab results",
-        "description": "Observation profile for lab results.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/HaLocation"
-        },
-        "name": "Common Location profile",
-        "description": "Represents Location data exposed by healthAlliance systems",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/HaOrganization"
-        },
-        "name": "Common Organization profile",
-        "description": "Represents Organization data exposed by healthAlliance systems",
         "exampleBoolean": false
       },
       {
@@ -99,10 +59,26 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/HaPractitionerRole"
+          "reference": "StructureDefinition/authorizedByPatient"
         },
-        "name": "Common PractitionerRole profile",
-        "description": "Represents PractitionerRole data exposed by healthAlliance systems. Used to reference the usual GP.",
+        "name": "AuthorizedByPatient",
+        "description": "If true, then indicates that the patient as authorized the use of this address or telecom to contact them.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/domicileCode"
+        },
+        "name": "DomicileCode",
+        "description": "The domicile code.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/validatedByPatient"
+        },
+        "name": "ValidatedByPatient",
+        "description": "If true, then indicates that the patient as indicated that the data is correct.",
         "exampleBoolean": false
       },
       {
@@ -115,11 +91,43 @@
       },
       {
         "reference": {
-          "reference": "Bundle/bundleLab"
+          "reference": "Bundle/bundle-patient-external"
         },
-        "name": "bundleLab",
-        "description": "A bundle with all the FBC resources. Represented as a batch",
+        "name": "bundle-patient-external",
+        "description": "An example patient with all external references to GP and GP Practice",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/bundleQueries"
+        },
+        "name": "bundleQueries",
+        "description": "Sample queries for IG companion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/cGP"
+        },
+        "name": "cGP",
+        "description": "An example of practitioner. Used as a target by some of the other examples",
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPractitioner"
+      },
+      {
+        "reference": {
+          "reference": "Patient/cPatient"
+        },
+        "name": "cPatient",
+        "description": "The patient.",
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPatient"
+      },
+      {
+        "reference": {
+          "reference": "Organization/cPractice"
+        },
+        "name": "cPractice",
+        "description": "Good Health Medical centre",
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
       },
       {
         "reference": {
@@ -127,7 +135,7 @@
         },
         "name": "cmdhb",
         "description": "Counties Manakau DHB",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
       },
       {
         "reference": {
@@ -135,31 +143,7 @@
         },
         "name": "drwelby",
         "description": "An example of practitioner. Used as a target by some of the other examples",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPractitioner"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ery"
-        },
-        "name": "ery",
-        "description": "An erythrrocyte observation",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "DiagnosticReport/fbc-contained"
-        },
-        "name": "fbc-contained",
-        "description": "Full Blood Count example. Uses contained observations",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
-      },
-      {
-        "reference": {
-          "reference": "DiagnosticReport/fbc-externalobs"
-        },
-        "name": "fbc-externalobs",
-        "description": "Full Blood Count example. Uses external observations",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaDiagnosticReport"
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPractitioner"
       },
       {
         "reference": {
@@ -167,47 +151,71 @@
         },
         "name": "ghmc",
         "description": "Good Health Medcial Centre",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
-      },
-      {
-        "reference": {
-          "reference": "Observation/hb"
-        },
-        "name": "hb",
-        "description": "A haemoglobin Observation",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/mmh"
-        },
-        "name": "mmh",
-        "description": "Middlemore hospital - an example of a Location",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaLocation"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/patient-external"
-        },
-        "name": "patient-external",
-        "description": "An example patient with all external rerferences to GP and GP Practice",
-        "exampleBoolean": true
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaOrganization"
       },
       {
         "reference": {
           "reference": "Patient/patient1"
         },
         "name": "patient1",
-        "description": "An example patient with all data items populated. Has a contained Practitioner as the GP and GP Practice.",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaPatient"
+        "description": "An example patient with all data items populated. Has a contained Practitioner as the GP and contained Organization GP Practice.",
+        "exampleCanonical": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaPatient"
       },
       {
         "reference": {
-          "reference": "Organization/sysmex"
+          "reference": "StructureDefinition/HaDiagnosticReportLM"
         },
-        "name": "sysmex",
-        "description": "Sysmex Laboratories",
-        "exampleCanonical": "http://hl7.org.nz/healthalliance/StructureDefinition/HaOrganization"
+        "description": "HaDiagnosticReport",
+        "exampleBoolean": false,
+        "name": "HaDiagnosticReportLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaLabObservationLM"
+        },
+        "description": "HaLabObservation",
+        "exampleBoolean": false,
+        "name": "HaLabObservationLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaLocationLM"
+        },
+        "description": "HaLocation",
+        "exampleBoolean": false,
+        "name": "HaLocationLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaOrganizationLM"
+        },
+        "description": "HaOrganization",
+        "exampleBoolean": false,
+        "name": "HaOrganizationLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPatientLM"
+        },
+        "description": "Represents the changes required to the hA Patient resource",
+        "exampleBoolean": false,
+        "name": "HaPatientLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPractitionerLM"
+        },
+        "description": "HaPractitioner",
+        "exampleBoolean": false,
+        "name": "HaPractitionerLM"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/HaPractitionerRoleLM"
+        },
+        "description": "HaPractitionerRole",
+        "exampleBoolean": false,
+        "name": "HaPractitionerRoleLM"
       }
     ],
     "page": {
@@ -224,6 +232,16 @@
           "nameUrl": "api.html",
           "title": "Api",
           "generation": "markdown"
+        },
+        {
+          "nameUrl": "capStmt.html",
+          "title": "Cap Stmt",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "companion.html",
+          "title": "Companion",
+          "generation": "html"
         },
         {
           "nameUrl": "design.html",

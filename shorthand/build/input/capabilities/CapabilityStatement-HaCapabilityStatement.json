@@ -5,6 +5,9 @@
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Demographics related resources</div>"
   },
+  "name": "hA_CapabilityStatement",
+  "title": "Capability Statement describing healthAlliances FHIR APIs",
+  "description": "Currently the subset of API's exposed by healthAlliance are read-only and confined to a small set of resource types.",
   "date": "2020-04-01",
   "status": "draft",
   "kind": "instance",
@@ -12,6 +15,10 @@
   "format": [
     "json"
   ],
+  "implementation": {
+    "description": "The hA endpoint",
+    "url": "http://healthAlliance.co.nz/fhir"
+  },
   "rest": [
     {
       "mode": "server",
@@ -21,25 +28,60 @@
           "supportedProfile": [
             "http://hl7.org.nz/healthalliance/HaPatient"
           ],
+          "documentation": "Each DHB exposes its core demographics infomation via the Patient resource.\n\n**This is italic**\n",
           "interaction": [
             {
-              "code": "read"
+              "code": "read",
+              "documentation": "Used to retrieve a Patient resource by Id. Note that this is ***not*** the same as the NHI identifier"
             },
             {
               "code": "search-type",
               "documentation": "Gender and birthDate are required in all searches"
             }
+          ],
+          "searchParam": [
+            {
+              "name": "name",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-name",
+              "documentation": "Not case sensitive"
+            },
+            {
+              "name": "identifier",
+              "type": "token",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-identifier",
+              "documentation": "Use for NHI queries"
+            },
+            {
+              "name": "organization",
+              "type": "reference",
+              "definition": "http://hl7.org/fhir/SearchParameter/Patient-organization",
+              "documentation": "This is the organization (DHB) that is the source of the resoruce"
+            }
+          ],
+          "searchInclude": [
+            "managingOrganization",
+            "generalPractitioner"
           ]
-        }
-      ],
-      "searchParam": [
-        {
-          "name": "name",
-          "type": "string"
         },
         {
-          "name": "identifier",
-          "type": "token"
+          "type": "Practitioner",
+          "documentation": "The practitioner resource is the indiviudal delivering care. Currently this is teh GP only.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Allows a read of a Practitioner resource - eg references from Patient"
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Allows a read of an Organization resource - eg references from Patient"
+            }
+          ]
         }
       ]
     }

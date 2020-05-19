@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "Applying IG fix..."
+# echo "Applying IG fix..."
 
-./fixIG.js
+# ./fixIG.js
 
-echo "Fix complete.."
+# echo "Fix complete.."
 
 set -e
-java -jar input-cache/org.hl7.fhir.publisher.jar -ig ig.ini 
+java -jar input-cache/org.hl7.fhir.publisher.jar -ig ig.ini  -tx n/a
 
 echo "zipping output..."
 

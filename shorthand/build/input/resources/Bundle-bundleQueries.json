@@ -1,0 +1,77 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundleQueries",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "patientQueries",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "code": "samplequery",
+              "system": "http://clinfhir.com/CodeSystem/docTypes",
+              "display": "Sample queries"
+            }
+          ]
+        },
+        "description": "Sample patient queries",
+        "content": [
+          {
+            "attachment": {
+              "url": "Patient?name=smith",
+              "title": "Find patient with the name of 'Smith'"
+            }
+          },
+          {
+            "attachment": {
+              "url": "Patient?_id=cPatient&_include=Patient:general-practitioner&_include=Patient:organization",
+              "title": "Returns patient and all referenced resources"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DocumentReference/patientQueries"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "providerQueries",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "code": "samplequery",
+              "system": "http://clinfhir.com/CodeSystem/docTypes",
+              "display": "Sample queries"
+            }
+          ]
+        },
+        "description": "Sample Practitioner queries",
+        "content": [
+          {
+            "attachment": {
+              "url": "Practitioner?name=welby",
+              "title": "Find Practitioners with the name of 'Welby'"
+            }
+          },
+          {
+            "attachment": {
+              "url": "PractitionerRole?organization=organization1&_include=PractitionerRole:practitioner&_include=PractitionerRole:location,&_include=PractitionerRole:organization",
+              "title": "Returns PractitionerRole resources where the organization has the id 'organization1', and referenced resources"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DocumentReference/providerQueries"
+      }
+    }
+  ]
+}

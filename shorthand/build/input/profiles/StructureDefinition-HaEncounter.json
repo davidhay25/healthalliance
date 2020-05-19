@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "HaEncounter",
-  "url": "http://hl7.org.nz/healthalliance/StructureDefinition/HaEncounter",
+  "url": "http://hl7.org.nz/fhir/healthAlliance/StructureDefinition/HaEncounter",
   "version": "0.1.0",
   "name": "HaEncounter",
   "title": "Common Encounter profile",

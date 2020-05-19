@@ -14,7 +14,7 @@ let serverRoot = "http://home.clinfhir.com:8054/baseR4/";   //the server to uplo
 //let Id = "NhiPatientLM";        //we'll change the Id
 let domain = "http://hl7.org.nz/fhir/"
 
-//let outFile = "../shorthand/build/input/models/StructureDefinition-" + Id + '.json'
+
 
 //the models to export. Note that the same list needs to be in build/fixIG.js...
 let arModels = ['HaPatient','HaPractitioner','HaPractitionerRole','HaLocation','HaOrganization','HaDiagnosticReport','HaLabObservation'];
@@ -26,7 +26,7 @@ arModels.forEach(function(modelId){
 function makeModel(modelId) {
     console.log(modelId)
     let LMID = modelId + "LM";      //Add LM to the ID to distinguish it from the profiles...
-    let outFile = "../shorthand/build/input/models/StructureDefinition-" + LMID + '.json'
+    let outFile = "../shorthand/ig-data/input/models/StructureDefinition-" + LMID + '.json'
     let options = {};
     options.headers = {"content-type": "application/json+fhir"}
     options.timeout = 20000;        //20 seconds
@@ -44,6 +44,7 @@ function makeModel(modelId) {
         delete newModel.snapshot;
         delete newModel.identifier;
         delete newModel.keyword;
+        newModel.description = model.description || model.purpose;
         newModel.id = LMID;
         newModel.url = domain + "StructureDefinition/" + LMID;
         newModel.name = LMID
